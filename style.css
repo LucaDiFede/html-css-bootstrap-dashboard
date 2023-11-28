@@ -1,0 +1,82 @@
+:root {
+    --main-header-height: 60px;
+}
+
+#main-header {
+    height: var(--main-header-height);
+}
+
+#main-section {
+    height: calc(100vh - var(--main-header-height));
+}
+
+#main-content {
+    overflow-y: auto;
+}
+
+.col-auto > i {
+    padding-right: 15px;
+}
+
+.col-auto > button {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.Boolean > button {
+    border-color: transparent;
+    border-radius: 15px;
+    background-color: rgb(51, 72, 82);
+    color: white;
+    font-size: small;
+}
+
+.header-top > button {
+    border-color: transparent;
+    border-radius: 15px;
+    background-color: rgb(51, 72, 82);
+    color: white;
+    font-size: small;
+}
+
+.clean-save > button{
+    border-color: transparent;
+    border-radius: 5px;
+}
+
+.clean-save :first-child {
+    background-color: cyan;
+    color: white;
+}
+
+.clean-save :last-child {
+    background-color: yellow;
+}
+
+.accordion {
+    background-color: white;
+    color: grey;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+
+aside {
+    background-image: url(img/sidebar-bg.png);
+}

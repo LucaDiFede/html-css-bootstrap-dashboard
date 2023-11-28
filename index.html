@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+
+    <style>
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: auto;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          right: 0;
+          background-color: white;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding: 8px;
+        }
+        
+        .sidenav a {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        </style>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h3>Inserisci un nuovo studente</h3>
+
+        <div style= "display: flex;">
+         
+         <div>Nome</div>
+
+         <div style="padding-left: 45%;">Cognome</div>
+        </div>
+
+        <div style="display: flex;">
+            <input type="text" style="width: 45%;">
+            <input type="text" style="width: 45%; margin-left: 45px;">
+        </div>
+        
+        <br>
+
+        <div style= "display: flex;">
+         
+         <div>Email</div>
+       
+          <div style="padding-left: 45%;">Password</div>
+         </div>
+       
+          <div style="display: flex;">
+            <input type="email" style="width: 45%;">
+            <input type="password" style="width: 45%; margin-left: 45px;">
+          </div>
+
+         <br>
+
+         <div>
+          Indirizzo
+         </div>
+          <input type="text" style="width: 100%">
+        
+         <br>
+         <br>
+
+         <div style="display: flex">
+           <div>
+            Città
+           </div>
+           <div style="padding-left: 42%">Stato</div>
+           <div style="padding-left: 23%">CAP</div>
+         </div>
+
+         <div style="display: flex">
+          <input type="text" style="width: 45%;">
+          <input type="text" placeholder="Scegli..." style="margin-left: 10px;">
+          <input type="text" style="margin-left: 10px; width: 20%;">
+         </div>
+
+         <br>
+
+         Foto
+
+         <div style="display: flex;">
+            <input type="text" style="width: 100%" placeholder="Nessun file selezionato">
+         </div>
+
+         <br>
+         <div>
+          <input type="checkbox"> Seleziona per proseguire
+         </div>
+
+         <br>
+
+         <div class="clean-save">
+         <button>
+            Salva
+         </button>
+
+         <button>
+            Svuota
+         </button>
+        </div>
+      </div>
+
+    <header id="main-header" class="bg-body-secondary d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row bg-body-secondary">
+                <div class="col-auto">
+                    <img src="img/logo.svg">
+                </div>
+                <div class="col">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" style="width: 90%;" placeholder= "Prova a cercare: Lezioni di Laravel">
+                </div>
+                <div class="col-auto">
+                    <i class="fa-solid fa-list"></i>
+                    <i class="fa-solid fa-circle-question"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <button>
+                     <i class="fa-solid fa-bell" style="color: orange"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="main-section" class="bg-success">
+        
+        <div class="container-fluid h-100">
+
+            <div class="row h-100">
+
+                <div class="col-auto">
+                  <aside class="h-100 d-flex flex-column justify-content-between">
+                    <nav>
+                        <div style="padding: 15px;">
+                            <i class="fa-solid fa-house"></i> Home
+                        </div>
+
+                        <div style="padding: 15px;">
+                            <i class="fa-solid fa-chart-simple"></i> Stats
+                        </div>
+
+                        <div>
+                            <i class="fa-duotone fa-signal-bars"></i> Signals
+                        </div>
+                    </nav>
+                    <nav CLASS="text-light" style="padding-bottom: 20px;">
+                        <i class="fa-solid fa-gear"></i>
+                        ADMIN
+                    </nav>
+                  </aside>
+                </div>
+
+                <div class="col bg-info h-100">
+                  <main id="main-content" class="h-100">
+                    <header class="bg-info" style="justify-content: space-between; display: flex;">
+
+                       <div class="Boolean">
+
+                        <h2 class="header-top" style="color: white;">
+                            Boolean
+                        <button>Piano blaze</button>
+                        </h2>
+                        <button>3 app</button>
+                        <span style="color: white;"> >> </span>
+                        <button>Boolean mobile app</button>
+                        <button>Boolean web app</button>
+                        <button>Boolean blog app</button>
+                       </div>
+
+                       <div>
+                        <div>
+                         Studenti online
+                        </div>
+                        <h2>
+                         125
+                        </h2>
+                       </div>
+
+                       <div>
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+                        <script>
+                            function openNav() {
+                              document.getElementById("mySidenav").style.width = "250px";
+                            }
+                            
+                            function closeNav() {
+                              document.getElementById("mySidenav").style.width = "0";
+                            }
+                            </script>
+                       </div>
+                    </header>
+
+                    <section>
+                        
+                        <div class="row g-0" style="display: flex">
+                          
+                            <div class="col-md-8 text-dark bg-white" style="margin-top: 25px;">
+                                <h3 style="padding: 10px;" class="bg-body-secondary">
+                                    Prossime classi
+                                </h3>
+                                <div style="display: flex;">
+                                    <div style="margin-left: 50px;">
+                                     Nome
+                                    </div>
+                                    <div style="margin-left: 400px;">
+                                     Data inizio
+                                    </div>
+                                    <div style="margin-left: 50px;">
+                                        ROI
+                                    </div>
+                                    <div style="margin-left: 50px;">
+                                        Stato
+                                    </div>
+                                    <div style="margin-left: 50px;">
+                                        Azioni
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div style="display: flex; font-size: small">
+                                    <div style="margin-left: 50px;">
+                                     <img src="img/class-avatar.jpg" style="width: 30px;">
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 15px">
+                                     Classe 75
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 37%;">
+                                        15 Febbraio 2021
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 35px;">
+                                        20%
+                                    </div>
+
+                                    <div style="margin-top: 3px; margin-left: 53px; background-color: green; border-radius: 5px; font-size: small; height: 20px;">
+                                        Done
+                                    </div>
+
+                                    <div style="margin-left: 40px;">
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </button>
+
+                                        <button style="width: 30px; height: 30px">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 text-dark bg-white h-100" style="margin-top: 25px; margin-left: 25px; border-bottom: 10px;">
+                                
+                                    <h3 style="padding: 10px;" class="bg-body-secondary">
+                                        Todo
+                                    </h3>
+
+                                    <div style="padding-left: 5px; border: 1px solid black; margin-left: 10px; margin-right: 20px;">
+                                      <input type="checkbox"> Kickoff nuove classi
+                                    </div>
+                                    <div style="padding-left: 5px; border: 1px solid black; margin-left: 10px; margin-right: 20px;">
+                                      <input type="checkbox"> Lezioni su Bootstrap 5 in classe #75
+                                    </div>
+                                    <div style="padding-left: 5px; border: 1px solid black; margin-left: 10px; margin-right: 20px;">
+                                      <input type="checkbox"> Controllare username github
+                                    </div>
+                                    <br>
+                            </div>
+
+                            <div class="col-md-8 text-dark bg-white" style="margin-top: 25px;">
+                                <h3 style="padding: 10px;" class="bg-body-secondary">
+                                   F.A.Q.
+                                </h3>
+                                <button class="accordion">Section 1</button>
+                                    <div class="panel">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+
+                                <button class="accordion">Section 2</button>
+                                    <div class="panel">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+                                <button class="accordion">Section 3</button>
+                                    <div class="panel">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+
+                            </div>
+                    </section>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }</script>
+</body>
+</html>
